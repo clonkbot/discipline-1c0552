@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-orange: #ff4d00;
+  --color-bg: #0a0a0a;
+  --color-surface: #0f0f0f;
+  --color-border: #222;
+  --color-text: #e8e8e8;
+  --color-muted: #666;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'IBM Plex Mono', monospace;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.font-mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* Remove spinner from number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Select dropdown styling */
+select {
+  background-image: none;
+}
+
+select option {
+  background-color: #1a1a1a;
+  color: #e8e8e8;
+  padding: 12px;
+}
+
+/* Modal slide up animation */
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out forwards;
+}
+
+/* Focus styles */
+input:focus,
+select:focus,
+button:focus {
+  outline: none;
+}
+
+/* Button press effect */
+button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color, opacity, transform;
+  transition-timing-function: ease-out;
+  transition-duration: 150ms;
+}
+
+/* Disable transitions for inputs while typing */
+input,
+select {
+  transition: border-color 150ms ease-out;
+}
